@@ -17,17 +17,13 @@
             </div>
             <div ng-app ng-init="checked = false">
                 <form class="registro-form" action="" method="post" name="registro-form">
+                    {% csrf_token %}
                     <label for="cedula" class="registro-label">Cédula del Empleado (C.C):</label>
                     <input class="registro-input" type="text" name="cedula" placeholder="" required/>
-                
-                    <label for="fecha-hora" class="registro-label">Fecha y Hora actual (Bogotá, Colombia):</label>
-                    <div class="registro-input">
-                        {% now "Y-m-d H:i:s" as current_datetime %}
-                        {{ current_datetime }}
-                    </div>
 
                     <div class="registro-btn-animate">
-                        <button type="submit" class="registro-btn">Registrar</button>
+                        <button type="submit" class="registro-btn" name="btn-entrada">Entrada</button>
+                        <button type="submit" class="registro-btn" name="btn-salida">Salida</button>
                     </div>
                 </form>
                 <div class="back-to-menu">

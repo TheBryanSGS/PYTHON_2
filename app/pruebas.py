@@ -5,6 +5,8 @@ from datetime import datetime
 
 class ConextionDB:
     #--
+    user = ''
+    #--
     def __init__(self):
         #--
         try:
@@ -33,7 +35,8 @@ class ConextionDB:
             #--
             if validar_contrasena is not None:
                 #--
-                if bcrypt.verify(contrasena, validar_contrasena[0].encode()): 
+                if bcrypt.verify(contrasena, validar_contrasena[0].encode()):
+                    self.user = usuario
                     return "Acceso exitoso"
                 #--
             #--
@@ -43,7 +46,7 @@ class ConextionDB:
     #--
     #Metodo que permite realizar el registro de un empleado que entro a las instalaciones
     #--
-    def empleado_Ingresa(self, cedula, usuario):
+    def empleado_Ingresa(self, cedula):
         #--
         try:
             #--
@@ -64,7 +67,7 @@ class ConextionDB:
                           ") VALUES ("\
                              + str(cedula)\
                            + ",NULL"\
-                           + ",'" + usuario + "')"
+                           + ",'" + self.user + "')"
                     #--
                     self.__cursor.execute(sql)
                     self.__conextion.commit()
@@ -81,7 +84,7 @@ class ConextionDB:
     #--
     #Metodo que permite realizar el registro de un empleado que sale de las instalaciones
     #--
-    def empleado_Sale(self, cedula, usuario):
+    def empleado_Sale(self, cedula):
         #--
         try:
             #--
@@ -102,7 +105,7 @@ class ConextionDB:
                         sql = "UPDATE Asistencia_Empleados "\
                                  "SET horas_ex = " + str(horas_Extra) +\
                                     ",Salida = CURRENT_TIMESTAMP"\
-                                    ",usua_mod = '" + usuario + "'"\
+                                    ",usua_mod = '" + self.user + "'"\
                               " WHERE Cedula = "+ str(cedula) +\
                                 " AND Salida IS NULL"
                         #--
@@ -206,13 +209,13 @@ class ConextionDB:
     #--
     #Valida los permisos de un usuario para generar reportes
     #--
-    def validar_Permisos(self, usuario):
+    def validar_Permisos(self):
         #--
         try:
             #--
             sql = "SELECT 1 "\
                     "FROM usuarios "\
-                   "WHERE nombre = '" + usuario + "' "\
+                   "WHERE nombre = '" + self.user + "' "\
                      "AND 'GR' = ANY(permisos)"
             self.__cursor.execute(sql)
             return self.__cursor.fetchone()

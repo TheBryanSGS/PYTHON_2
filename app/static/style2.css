@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+html, body * { box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+body {
+  background:
+    linear-gradient(
+    rgba(73, 60, 247, 0.8),
+    rgba(246,247,249,0.8)),
+    url(fondo.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.container {
+  width: center;
+
+  padding-top: 3%;
+  padding-bottom: 100px;
+}
+.frame {
+  height: 575px;
+  width: 430px;
+  background:
+    linear-gradient(
+    rgba(12, 87, 224, 0.75),
+    rgba(68, 37, 202, 0.95));
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  box-shadow: 0px 2px 7px rgba(02,2,2,2);
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.frame-long {
+  height: 615px;
+}
+.frame-short {
+  height: 400px;
+  margin-top: 50px;
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
+}
+
+.nav {
+  width: 100%;
+  height: 150px;
+  padding-top: 100px;
+  opacity: 1;
+  transition: all .5s ease;
+}
+
+.nav-up {
+  transform: translateY(-100px);
+  opacity: 0;
+}
+
+li {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'DM Serif Display', serif;
+  display: inline;
+  text-align: left;
+  color: #ffffff;
+}
+
+.signin-active a {
+    margin: 0;
+    margin-left: -40px;
+    padding-bottom: 40px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: none;
+    transition: all .25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.signin-inactive a {
+  padding-bottom: 0;
+  color: rgba(255, 255, 255, 0.89);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.form-signin {
+  width: 430px;
+  height: 375px;
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 55px;
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.success {
+  width: 80%;
+  height: 150px;
+  text-align: center;
+  position: relative;
+  top: -890px;
+  left: 450px;
+  opacity: .0;
+  transition: all .8s .4s ease;
+}
+
+#check path {
+    stroke: #ffffff;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: .85px;
+    stroke-dasharray: 60px 300px;
+    stroke-dashoffset: -166px;
+    fill: rgba(255,255,255,.0);
+    transition: stroke-dashoffset 2s ease .5s, fill 1.5s ease 1.0s;
+}
+
+#check.checked path {
+    stroke-dashoffset: 33px;
+    fill: rgba(255,255,255,.03);
+}
+
+.form-styling {
+  width: 100%;
+  height: 50px;
+	padding-left: 15px;
+	border: none;
+	border-radius: 20px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.712);
+}
+
+label {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  color: rgb(245, 245, 245);
+  display: block;
+}
+
+:focus {outline: none;
+}
+
+.form-signin input:focus, textarea:focus {
+    background: rgb(255, 255, 255);
+    border: none; 
+    padding-right: 40px;
+    transition: background .5s ease;
+ }
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  display: none;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 85px;
+  padding-top: 2px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+}
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  width: 65px; 
+  height: 25px;
+  background: rgba(1, 19, 66, 0.76);
+  border-radius: 15px;
+  left: 0; 
+  top: -1px;
+  transition: all .2s ease;
+}
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  width: 10px; 
+  height: 10px;
+  background: rgb(233, 236, 10);
+  border-radius: 50%;
+  top: 7px; 
+  left: 10px;
+  transition: all .2s ease;
+}
+
+/* on checked */
+[type="checkbox"]:checked + label:before {
+  background: #14c7af; 
+}
+
+[type="checkbox"]:checked + label:after {
+  background: #000000;
+  top: 7px; 
+  left: 45px;
+}
+
+[type="checkbox"]:checked + label .ui,
+[type="checkbox"]:not(:checked) + label .ui:before,
+[type="checkbox"]:checked + label .ui:after {
+  position: absolute;
+  left: 6px;
+  width: 65px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 22px;
+  transition: all .2s ease;
+}
+
+[type="checkbox"]:not(:checked) + label .ui:before {
+  content: "no";
+  left: 30px;
+  color: rgba(255, 255, 255, 0.822);
+}
+
+[type="checkbox"]:checked + label .ui:after {
+  content: "yes";
+  color: #110101;
+}
+
+[type="checkbox"]:focus + label:before {
+  box-sizing: border-box;
+  margin-top: -1px;
+}
+
+
+.btn-signin, .btn-signin1{
+  text-decoration: none;
+  float: left;
+  padding-top: 10px;
+  width: 100%;
+  height: 50px;
+	border: none;
+	border-radius: 80px;
+  margin-top: -8px;
+}
+
+
+.btn-animate {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  padding-top: 8px;
+  width: 100%;
+  height: 50px;
+	border: none;
+	border-radius: 80px;
+  margin-top: 23px;
+  background-color: rgb(58, 143, 255);
+  box-shadow: 0px 2px 7px rgba(02,2,2,2);
+  left: 0;
+  top: 0px;
+  transition: all .5s ease, top .5s ease .5s, height .5s ease .5s, background-color .5s ease .75s; 
+}
+
+.btn-animate-grow {
+  width: 130%;
+  height: 625px;
+  position: relative;
+  left: -55px;
+  top: -420px;
+  color: rgba(255,255,255,0);
+  background-color: rgb(158, 130, 233);
+}
+
+ a.btn-signin:hover , a.btn-signin1:hover{
+    cursor: pointer; 
+    background-color: #08b8cf;
+    transition: background-color .5s; 
+}
+

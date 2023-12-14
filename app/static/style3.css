@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+html, body, * {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0; /* Agregado: Elimina el margen predeterminado del cuerpo y otros elementos */
+}
+
+body {
+  background:
+    linear-gradient(
+      rgba(73, 60, 247, 0.8),
+      rgba(246, 247, 249, 0.8)),
+    url(fondo.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center; /* Agregado: Centra el contenido horizontalmente */
+  align-items: center; /* Agregado: Centra el contenido verticalmente */
+  height: 100vh; /* Agregado: Usa el 100% de la altura de la ventana */
+}
+
+.frame {
+  height: 575px;
+  width: 430px;
+  background:
+    linear-gradient(
+      rgba(12, 87, 224, 0.75),
+      rgba(68, 37, 202, 0.95));
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0px 2px 7px rgba(2, 2, 2, 0.2);
+  overflow: hidden;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Agregado: Centra los elementos hijos horizontalmente */
+}
+
+.nav {
+  width: 100%;
+  padding-top: 50px;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+li {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'DM Serif Display', serif;
+    display: inline;
+    text-align: left;
+    color: #ffffff;
+  }
+
+.title a{
+    margin: 0; /* Ajusta el margen a cero */
+    margin-left: -40px; /* Ajusta el margen izquierdo según sea necesario */
+    padding-bottom: 40px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: solid 2px #5de1f8;
+    transition: all .25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+
+
+.form-opciones {
+  width: 100%; /* Cambiado: Aprovecha el ancho disponible */
+  height: auto; /* Cambiado: Ajusta la altura automáticamente */
+  font-size: 20px;
+  font-weight: 300;
+  padding: 55px 37px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex;
+  flex-direction: column; /* Agregado: Apila los elementos verticalmente */
+  align-items: center; /* Agregado: Centra los elementos horizontalmente */
+  justify-content: center; /* Agregado: Centra los elementos verticalmente */
+}
+
+.btn1-opciones,
+.btn2-opciones {
+  width: 200%;
+  height: 50px;
+  margin: 50px 10% 50px -65px; /* Ajustado: Margen vertical: 50px, Margen derecho: 0, Centrado horizontalmente */
+  border: none;
+  border-radius: 80px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(58, 143, 255);
+  box-shadow: 0px 2px 7px rgba(2, 2, 2, 0.74);
+  padding: 10px; /* Añadido: Relleno interno para las letras */
+  transition: all 0.5s ease, top 0.5s ease 0.5s, height 0.5s ease 0.5s, background-color 0.5s ease 0.75s;
+}
+
+.btn1-opciones:hover,
+.btn2-opciones:hover {
+  cursor: pointer;
+  background-color: #052796;
+  color: white;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+
+}

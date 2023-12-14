@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+html, body * {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background:
+    linear-gradient(
+      rgba(73, 60, 247, 0.8),
+      rgba(246, 247, 249, 0.8)),
+    url(fondo.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.reporte-container {
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reporte-frame {
+  height: 575px;
+  width: 430px;
+  background:
+    linear-gradient(
+      rgba(12, 87, 224, 0.75),
+      rgba(68, 37, 202, 0.95));
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0px 2px 7px rgba(2, 2, 2, 0.2);
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.reporte-nav {
+  width: 100%;
+  padding-top: 50px;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.reporte-links li {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'DM Serif Display', serif;
+  display: inline;
+  text-align: left;
+  color: #ffffff;
+}
+
+.reporte-active a {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  margin-left: -40px;
+  padding-bottom: 40px;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: solid 2px #5de1f8;
+  transition: all .25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+
+.reporte-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.reporte-input {
+  width: 100%;
+  height: 40px; /* Reducido el tamaño de los campos de fecha */
+  font-size: 16px; /* Aumentado el tamaño de la fuente */
+  padding-left: 15px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.712);
+  text-align: left;
+}
+
+.reporte-label {
+  font-weight: 400;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgb(245, 245, 245);
+  text-align: left;
+}
+
+.reporte-input:focus {
+  background: rgb(255, 255, 255);
+  border: none;
+  padding-right: 40px;
+  transition: background 0.5s ease;
+}
+
+.reporte-btn {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 80px;
+    background-color: rgb(58, 143, 255);
+    color: black;
+    box-shadow: 0px 2px 7px rgba(2, 2, 2, 0.2);
+    margin-top: 23px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-align: center; 
+  }
+  
+  .reporte-btn:hover {
+    background-color: #08b8cf;
+  }
+  .back-to-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.back-btn {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #ddd;
+}

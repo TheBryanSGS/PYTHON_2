@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de opciones</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style3.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="frame">
+            <div class="nav">
+                <ul class="links">
+                    <li class="title"><a>Menú de opciones</a></li>
+                </ul>
+            </div>
+                <form class="form-opciones" action="" method="post" name="form">
+                    <div class="btn-animate">
+                        <a class="btn1-opciones"href="{%url 'registro'%}">Registrar empleado</a>
+                        <a  class="btn2-opciones" href="{%url 'reporte'%}">Generar reporte</a>
+                    </div>
+                </form>
+        </div>
+    </div>
+</body>
+</html>

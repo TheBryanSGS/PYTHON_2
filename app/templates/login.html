@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="frame">
+            <div class="nav">
+                <ul class="links">
+                    <li class="signin-active"><a>Ingresar</a></li>
+                </ul>
+            </div>
+            <div ng-app ng-init="checked = false">
+                <form class="form-signin" action="" method="post" name="form">
+                    {% csrf_token %}
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <p class="error" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <label for="username">ID usuario:</label>
+                    <input class="form-styling" type="text" name="username" placeholder="" required/>
+                    <label for="password">Contraseña:</label>
+                    <input class="form-styling" type="password" name="password" placeholder="" required/>
+                    <input type="checkbox" id="checkbox"/>
+                    <label for="checkbox"><span class="ui"></span>Mantener la sesión iniciada.</label>
+                    <div class="btn-animate">
+                        <button type="submit" class="btn-signin" href="{% url 'opciones' %}">Iniciar sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

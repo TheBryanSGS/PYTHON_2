@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Empleado</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles4.css' %}">
+</head>
+<body>
+    <div class="registro-container">
+        <div class="registro-frame">
+            <div class="registro-nav">
+                <ul class="registro-links">
+                    <li class="registro-active"><a>Registro de Empleado</a></li>
+                </ul>
+            </div>
+            <div ng-app ng-init="checked = false">
+                <form class="registro-form" action="" method="post" name="registro-form">
+                    <label for="cedula" class="registro-label">Cédula del Empleado (C.C):</label>
+                    <input class="registro-input" type="text" name="cedula" placeholder="" required/>
+                
+                    <label for="fecha-hora" class="registro-label">Fecha y Hora actual (Bogotá, Colombia):</label>
+                    <div class="registro-input">
+                        {% now "Y-m-d H:i:s" as current_datetime %}
+                        {{ current_datetime }}
+                    </div>
+
+                    <div class="registro-btn-animate">
+                        <button type="submit" class="registro-btn">Registrar</button>
+                    </div>
+                </form>
+                <div class="back-to-menu">
+                    <a href="{% url 'opciones' %}">
+                        <img src="{% static 'return.png' %}" alt="Regresar al Menú" class="back-btn">
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

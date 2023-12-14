@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style5.css' %}">
+</head>
+<body>
+    <div class="reporte-container">
+        <div class="reporte-frame">
+            <div class="reporte-nav">
+                <ul class="reporte-links">
+                    <li class="reporte-active"><a>Reporte</a></li>
+                </ul>
+            </div>
+            <div ng-app ng-init="checked = false">
+                <form class="reporte-form" action="" method="post" name="reporte-form">
+                    <label for="desde" class="reporte-label">Desde:</label>
+                    <input class="reporte-input" type="date" name="desde" required/>
+                
+                    <label for="hasta" class="reporte-label">Hasta:</label>
+                    <input class="reporte-input" type="date" name="hasta" required/>
+                    <button type="submit" class="reporte-btn">Generar documento </button>
+
+                    <div class="back-to-menu">
+                        <a href="{% url 'opciones' %}">
+                            <img src="{% static 'return.png' %}" alt="Regresar al Menú" class="back-btn">
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

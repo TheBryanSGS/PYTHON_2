@@ -5,7 +5,7 @@ from .views import index, login, opciones, registro, reporte# desde views trae l
 urlpatterns =[
     path('',views.index,name ="index"),
     path('login/', views.login, name ='login'),
-    path('opciones',views.opciones, name = 'opciones'),
-    path('registro', views.registro, name ="registro"),
-    path('reporte', views.reporte, name ="reporte")
+    path('opciones/',views.opciones, name = 'opciones'),
+    path('registro/', views.registro, name ="registro"),
+    path('reporte/', views.reporte, name ="reporte")
 ]

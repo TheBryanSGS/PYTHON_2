@@ -15,16 +15,23 @@
                     <li class="signin-active"><a>Ingresar</a></li>
                 </ul>
             </div>
+            {% if messages %}
+
+            
+            <ul class="messages popup">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+                <!-- Usar un párrafo (p) para contener el botón dentro de la ventana emergente -->
+                <li>
+                    <p><button class="accept-btn" onclick="reloadAndClose()">Aceptar</button></p>
+                </li>
+            </ul>
+            {% endif %}
+
             <div ng-app ng-init="checked = false">
                 <form class="form-signin" action="" method="post" name="form">
                     {% csrf_token %}
-                    {% if messages %}
-                        <ul class="messages">
-                            {% for message in messages %}
-                                <p class="error" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
                     <label for="username">ID usuario:</label>
                     <input class="form-styling" type="text" name="username" placeholder="" required/>
                     <label for="password">Contraseña:</label>
@@ -39,4 +46,29 @@
         </div>
     </div>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var messages = document.querySelector('.messages');
+
+        // Verificar si hay mensajes y si la clase 'show' debe aplicarse
+        if (messages && messages.children.length > 0) {
+            // Agregar la clase 'show' después de un pequeño retraso (puedes ajustar el tiempo)
+            window.setTimeout(function () {
+                messages.classList.add('show');
+            }, 500); // Esperar 500 milisegundos (0.5 segundos) antes de mostrar la ventana emergente
+        }
+
+        var acceptButton = document.querySelector('.accept-btn');
+        if (acceptButton) {
+            acceptButton.addEventListener('click', function () {
+                // Ocultar la ventana emergente sin recargar la página
+                if (messages) {
+                    messages.classList.remove('show');
+                }
+            });
+        }
+    });
+</script>
+
 </html>

@@ -16,9 +16,10 @@
                 </ul>
             </div>
                 <form class="form-opciones" action="" method="post" name="form">
+                    {% csrf_token %}
                     <div class="btn-animate">
-                        <a class="btn1-opciones"href="{%url 'registro'%}">Registrar empleado</a>
-                        <a  class="btn2-opciones" href="{%url 'reporte'%}">Generar reporte</a>
+                        <a class="btn1-opciones" href="{%url 'registro'%}" >Registrar empleado</a>
+                        <button  class="btn2-opciones" href="{%url 'reporte'%}" name="generareporte">Generar reporte</button>
                     </div>
                 </form>
         </div>

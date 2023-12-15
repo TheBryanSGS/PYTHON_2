@@ -39,6 +39,56 @@ body {
   box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
 }
 
+/* Estilos para la ventana emergente */
+.popup {
+  justify-content: right; 
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff; /* Color de fondo (puedes cambiarlo) */
+  color: #000000; /* Color del texto (puedes cambiarlo) */
+  border-radius: 5px;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none; /* Inicialmente oculto */
+  font-size: 16px; /* Tamaño de letra */
+}
+
+/* Estilos para el botón "Aceptar" dentro de la ventana emergente */
+.popup button {
+  right: 30px;
+  justify-content: center; 
+  background-color: #4caf50; /* Color de fondo (puedes cambiarlo) */
+  color: #fff; /* Color del texto (puedes cambiarlo) */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px; /* Tamaño de letra */
+}
+
+/* Mostrar la ventana emergente cuando tiene la clase "show" */
+.popup.show {
+ 
+  display: block;
+}
+.messages.show {
+  justify-content: center; 
+  display: block;
+}
+
+.accept-btn-container {
+  
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  margin: 10px 0; /* Ajusta el margen según sea necesario */
+}
+
 .nav {
   width: 100%;
   height: 150px;
@@ -276,9 +326,8 @@ label {
   background-color: rgb(158, 130, 233);
 }
 
- a.btn-signin:hover , a.btn-signin1:hover{
+ button .btn-signin:hover , a.btn-signin1:hover{
     cursor: pointer; 
     background-color: #08b8cf;
     transition: background-color .5s; 
 }
-

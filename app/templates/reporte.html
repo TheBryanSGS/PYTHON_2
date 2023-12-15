@@ -17,12 +17,13 @@
             </div>
             <div ng-app ng-init="checked = false">
                 <form class="reporte-form" action="" method="post" name="reporte-form">
+                    {% csrf_token %}
                     <label for="desde" class="reporte-label">Desde:</label>
                     <input class="reporte-input" type="date" name="desde" required/>
                 
                     <label for="hasta" class="reporte-label">Hasta:</label>
                     <input class="reporte-input" type="date" name="hasta" required/>
-                    <button type="submit" class="reporte-btn">Generar documento </button>
+                    <button type="submit" class="reporte-btn" name="generar-xlsx">Generar documento </button>
 
                     <div class="back-to-menu">
                         <a href="{% url 'opciones' %}">

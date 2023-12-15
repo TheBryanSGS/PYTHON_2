@@ -137,7 +137,8 @@ class ConextionDB:
             sql = "SELECT cedula, nombre_completo, cargo, area, TO_CHAR(ingreso, 'DD-MM-YYYY HH:MI AM'), TO_CHAR(salida, 'DD-MM-YYYY HH:MI AM'), horas_extra "\
                     "FROM v_registro_asistencias "\
                    "WHERE ingreso BETWEEN TO_DATE('" + str_fecha_ini + "', 'YYYY-MM-DD') AND TO_DATE('" + str_fecha_fin + "', 'YYYY-MM-DD') + INTERVAL '1 day'"\
-                    "  OR salida  BETWEEN TO_DATE('" + str_fecha_ini + "', 'YYYY-MM-DD') AND TO_DATE('" + str_fecha_fin + "', 'YYYY-MM-DD') + INTERVAL '1 day'"
+                    "  OR salida  BETWEEN TO_DATE('" + str_fecha_ini + "', 'YYYY-MM-DD') AND TO_DATE('" + str_fecha_fin + "', 'YYYY-MM-DD') + INTERVAL '1 day'"\
+                "ORDER BY ingreso ASC"
             self.__cursor.execute(sql)
             return [(';'.join(map(lambda x: str(x) if x is not None else " ",fila))) for fila in self.__cursor.fetchall()]
             #--
